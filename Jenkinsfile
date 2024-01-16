@@ -10,9 +10,9 @@ pipeline {
         }
 
         stage('Build Docker Image') {
-            when {
-                branch 'main'
-            }
+            // when {
+            //     branch 'main'
+            // }
             steps {
                 script {
                     app = docker.build("ma31121990/train-schedule")
@@ -24,9 +24,9 @@ pipeline {
         }
         
         stage('Push Docker Image') {
-            when {
-                branch 'main'
-            }
+            // when {
+            //     branch 'main'
+            // }
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
